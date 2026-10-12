@@ -38,7 +38,7 @@
           },
           "prompt": {
             "ru": "Как сказать «Привет» по-английски?",
-            "en": "How do you say «Привет» in English?"
+            "en": "How do you say “hello” in English?"
           },
           "public_data": {
             "choices": [
@@ -318,7 +318,7 @@
           },
           "prompt": {
             "ru": "Собери фразу «Я из России».",
-            "en": "Build the sentence «Я из России»."
+            "en": "Build the English sentence from: “Я из России”."
           },
           "public_data": {
             "tokens": [
@@ -356,7 +356,7 @@
           "hints": {
             "level_1": {
               "ru": "В фразе «Собери фразу «Я из России».» используй порядок: подлежащее, be, затем профессия/предмет/признак.",
-              "en": "For “Собери фразу «Я из России».”, use this order: subject, “be”, then the job/object/description."
+              "en": "Start with “I”, then use the matching form of “be” before the phrase that tells where you are from."
             },
             "level_2": {
               "ru": "Поставь I перед формой be; после неё проверь, нужен ли артикль или признак.",
@@ -504,7 +504,7 @@
           },
           "prompt": {
             "ru": "Я встаю в семь часов.",
-            "en": "Я встаю в семь часов."
+            "en": "Translate into English: “Я встаю в семь часов.”"
           },
           "public_data": {
             "placeholder": {
@@ -638,7 +638,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Она встаёт в семь.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Она встаёт в семь.”, start with who/what acts, then put the verb."
+              "en": "Begin with “She”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: She первым; действие — до времени или места.",
@@ -752,7 +752,7 @@
           },
           "prompt": {
             "ru": "Как по-английски «пять»?",
-            "en": "Как по-английски «пять»?"
+            "en": "How do you say “five” in English?"
           },
           "public_data": {
             "choices": [
@@ -807,7 +807,7 @@
           },
           "prompt": {
             "ru": "Мне десять лет.",
-            "en": "Мне десять лет."
+            "en": "Translate into English: “Мне десять лет.”"
           },
           "public_data": {
             "placeholder": {
@@ -846,7 +846,7 @@
           },
           "prompt": {
             "ru": "Сколько тебе лет?",
-            "en": "Сколько тебе лет?"
+            "en": "Translate into English: “Сколько тебе лет?”"
           },
           "public_data": {
             "tokens": [
@@ -884,7 +884,7 @@
           "hints": {
             "level_1": {
               "ru": "В вопросе «Сколько тебе лет?» вопросительное слово идёт первым; затем поставь вспомогательный глагол и подлежащее.",
-              "en": "In “Сколько тебе лет?”, put the question word first, followed by the auxiliary and the subject."
+              "en": "Start with “How”, then use the correct question-word order for the verb and subject."
             },
             "level_2": {
               "ru": "Начни с How; не ставь подлежащее перед вспомогательным глаголом.",
@@ -1032,7 +1032,7 @@
           },
           "prompt": {
             "ru": "Я из Англии.",
-            "en": "Я из Англии."
+            "en": "Translate into English: “Я из Англии.”"
           },
           "public_data": {
             "placeholder": {
@@ -1071,7 +1071,7 @@
           },
           "prompt": {
             "ru": "Откуда она?",
-            "en": "Откуда она?"
+            "en": "Translate into English: “Откуда она?”"
           },
           "public_data": {
             "tokens": [
@@ -1104,7 +1104,7 @@
           "hints": {
             "level_1": {
               "ru": "Вопрос «Откуда она?» начинается с вопросительного слова; после него be ставится перед подлежащим.",
-              "en": "The question “Откуда она?” starts with a question word; put “be” before the subject."
+              "en": "Start with “Where”, then use the correct question-word order for the verb and subject."
             },
             "level_2": {
               "ru": "Сначала Where, затем форма be для нужного подлежащего; слова о месте/возрасте идут после него.",
@@ -1213,7 +1213,7 @@
           },
           "prompt": {
             "ru": "Что значит brother?",
-            "en": "Что значит brother?"
+            "en": "What does “brother” mean?"
           },
           "public_data": {
             "choices": [
@@ -1268,7 +1268,7 @@
           },
           "prompt": {
             "ru": "Моя сестра дома.",
-            "en": "Моя сестра дома."
+            "en": "Translate into English: “Моя сестра дома.”"
           },
           "public_data": {
             "placeholder": {
@@ -1306,7 +1306,7 @@
           },
           "prompt": {
             "ru": "Это моя мама.",
-            "en": "Это моя мама."
+            "en": "Translate into English: “Это моя мама.”"
           },
           "public_data": {
             "tokens": [
@@ -1338,13 +1338,13 @@
           },
           "explanation": {
             "ru": "This is… значит «Это…».",
-            "en": "“This is…” means “Это…”."
+            "en": "Use “This is…” to identify a person or thing."
           },
           "sort_order": 3,
           "hints": {
             "level_1": {
               "ru": "В фразе «Это моя мама.» используй порядок: подлежащее, be, затем профессия/предмет/признак.",
-              "en": "For “Это моя мама.”, use this order: subject, “be”, then the job/object/description."
+              "en": "Start with “This”, then use “is” and a possessive word before the family member."
             },
             "level_2": {
               "ru": "Поставь This перед формой be; после неё проверь, нужен ли артикль или признак.",
@@ -1491,7 +1491,7 @@
           },
           "prompt": {
             "ru": "телефон",
-            "en": "телефон"
+            "en": "Translate into English: “телефон”"
           },
           "public_data": {
             "placeholder": {
@@ -1529,7 +1529,7 @@
           },
           "prompt": {
             "ru": "Это книга.",
-            "en": "Это книга."
+            "en": "Translate into English: “Это книга.”"
           },
           "public_data": {
             "tokens": [
@@ -1567,7 +1567,7 @@
           "hints": {
             "level_1": {
               "ru": "В фразе «Это книга.» используй порядок: подлежащее, be, затем профессия/предмет/признак.",
-              "en": "For “Это книга.”, use this order: subject, “be”, then the job/object/description."
+              "en": "Start with “It”, then use “is” and an indefinite article before the singular object noun."
             },
             "level_2": {
               "ru": "Поставь It перед формой be; после неё проверь, нужен ли артикль или признак.",
@@ -1676,7 +1676,7 @@
           },
           "prompt": {
             "ru": "The box is ___. (маленький)",
-            "en": "The box is ___. (маленький)"
+            "en": "The box is ___. (small)"
           },
           "public_data": {
             "choices": [
@@ -1731,7 +1731,7 @@
           },
           "prompt": {
             "ru": "Он высокий.",
-            "en": "Он высокий."
+            "en": "Translate into English: “Он высокий.”"
           },
           "public_data": {
             "placeholder": {
@@ -1769,7 +1769,7 @@
           },
           "prompt": {
             "ru": "Она добрая.",
-            "en": "Она добрая."
+            "en": "Translate into English: “Она добрая.”"
           },
           "public_data": {
             "tokens": [
@@ -1802,7 +1802,7 @@
           "hints": {
             "level_1": {
               "ru": "В фразе «Она добрая.» используй порядок: подлежащее, be, затем профессия/предмет/признак.",
-              "en": "For “Она добрая.”, use this order: subject, “be”, then the job/object/description."
+              "en": "Start with “She”, use “is”, and finish with an adjective describing personality."
             },
             "level_2": {
               "ru": "Поставь She перед формой be; после неё проверь, нужен ли артикль или признак.",
@@ -1950,7 +1950,7 @@
           },
           "prompt": {
             "ru": "Я читаю каждый день.",
-            "en": "Я читаю каждый день."
+            "en": "Translate into English: “Я читаю каждый день.”"
           },
           "public_data": {
             "placeholder": {
@@ -1988,7 +1988,7 @@
           },
           "prompt": {
             "ru": "Они работают дома.",
-            "en": "Они работают дома."
+            "en": "Translate into English: “Они работают дома.”"
           },
           "public_data": {
             "tokens": [
@@ -2026,7 +2026,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Они работают дома.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Они работают дома.”, start with who/what acts, then put the verb."
+              "en": "Begin with “They”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: They первым; действие — до времени или места.",
@@ -2190,7 +2190,7 @@
           },
           "prompt": {
             "ru": "Я не живу здесь.",
-            "en": "Я не живу здесь."
+            "en": "Translate into English: “Я не живу здесь.”"
           },
           "public_data": {
             "placeholder": {
@@ -2229,7 +2229,7 @@
           },
           "prompt": {
             "ru": "Ты работаешь?",
-            "en": "Ты работаешь?"
+            "en": "Translate into English: “Ты работаешь?”"
           },
           "public_data": {
             "tokens": [
@@ -2262,7 +2262,7 @@
           "hints": {
             "level_1": {
               "ru": "Это вопрос/просьба «Ты работаешь?»: вспомогательный или модальный глагол ставится перед подлежащим.",
-              "en": "This is a question/request (“Ты работаешь?”): put the auxiliary or modal before the subject."
+              "en": "Begin with “Do”; place the subject and main verb in the order required by this question or request."
             },
             "level_2": {
               "ru": "Начало — Do + подлежащее; после can используй глагол без to и окончания -s.",
@@ -2317,7 +2317,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Она не любит кофе.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Она не любит кофе.”, start with who/what acts, then put the verb."
+              "en": "Begin with “She”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: She первым; действие — до времени или места.",
@@ -2426,7 +2426,7 @@
           },
           "prompt": {
             "ru": "сегодня утром",
-            "en": "сегодня утром"
+            "en": "Translate into English: “сегодня утром”"
           },
           "public_data": {
             "placeholder": {
@@ -2464,7 +2464,7 @@
           },
           "prompt": {
             "ru": "Я работаю в понедельник.",
-            "en": "Я работаю в понедельник."
+            "en": "Translate into English: “Я работаю в понедельник.”"
           },
           "public_data": {
             "tokens": [
@@ -2502,7 +2502,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Я работаю в понедельник.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Я работаю в понедельник.”, start with who/what acts, then put the verb."
+              "en": "Begin with “I”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: I первым; действие — до времени или места.",
@@ -2595,7 +2595,7 @@
           },
           "prompt": {
             "ru": "Что значит water?",
-            "en": "Что значит water?"
+            "en": "What does “water” mean?"
           },
           "public_data": {
             "choices": [
@@ -2627,7 +2627,7 @@
           },
           "explanation": {
             "ru": "Water — вода.",
-            "en": "Water is the English word for “вода”."
+            "en": "Water is the English word for the clear liquid people drink."
           },
           "sort_order": 1,
           "hints": {
@@ -2650,7 +2650,7 @@
           },
           "prompt": {
             "ru": "Я люблю чай.",
-            "en": "Я люблю чай."
+            "en": "Translate into English: “Я люблю чай.”"
           },
           "public_data": {
             "placeholder": {
@@ -2688,7 +2688,7 @@
           },
           "prompt": {
             "ru": "Можно мне воды?",
-            "en": "Можно мне воды?"
+            "en": "Translate into English: “Можно мне воды?”"
           },
           "public_data": {
             "tokens": [
@@ -2726,7 +2726,7 @@
           "hints": {
             "level_1": {
               "ru": "Это вопрос/просьба «Можно мне воды?»: вспомогательный или модальный глагол ставится перед подлежащим.",
-              "en": "This is a question/request (“Можно мне воды?”): put the auxiliary or modal before the subject."
+              "en": "Begin with “Can”; place the subject and main verb in the order required by this question or request."
             },
             "level_2": {
               "ru": "Начало — Can + подлежащее; после can используй глагол без to и окончания -s.",
@@ -2835,7 +2835,7 @@
           },
           "prompt": {
             "ru": "Ты хочешь кофе.",
-            "en": "Ты хочешь кофе."
+            "en": "Choose the most polite English way to order coffee."
           },
           "public_data": {
             "choices": [
@@ -2890,7 +2890,7 @@
           },
           "prompt": {
             "ru": "Счёт, пожалуйста.",
-            "en": "Счёт, пожалуйста."
+            "en": "Translate into English: “Счёт, пожалуйста.”"
           },
           "public_data": {
             "placeholder": {
@@ -2929,7 +2929,7 @@
           },
           "prompt": {
             "ru": "Сколько это стоит?",
-            "en": "Сколько это стоит?"
+            "en": "Translate into English: “Сколько это стоит?”"
           },
           "public_data": {
             "tokens": [
@@ -2967,7 +2967,7 @@
           "hints": {
             "level_1": {
               "ru": "В вопросе «Сколько это стоит?» вопросительное слово идёт первым; затем поставь вспомогательный глагол и подлежащее.",
-              "en": "In “Сколько это стоит?”, put the question word first, followed by the auxiliary and the subject."
+              "en": "Start with “How”, then use the correct question-word order for the verb and subject."
             },
             "level_2": {
               "ru": "Начни с How; не ставь подлежащее перед вспомогательным глаголом.",
@@ -3027,7 +3027,7 @@
           "hints": {
             "level_1": {
               "ru": "Это вопрос/просьба «Можно мне чай, пожалуйста?»: вспомогательный или модальный глагол ставится перед подлежащим.",
-              "en": "This is a question/request (“Можно мне чай, пожалуйста?”): put the auxiliary or modal before the subject."
+              "en": "Begin with “Can”; place the subject and main verb in the order required by this question or request."
             },
             "level_2": {
               "ru": "Начало — Can + подлежащее; после can используй глагол без to и окончания -s.",
@@ -3136,7 +3136,7 @@
           },
           "prompt": {
             "ru": "Где станция?",
-            "en": "Где станция?"
+            "en": "Translate into English: “Где станция?”"
           },
           "public_data": {
             "placeholder": {
@@ -3174,7 +3174,7 @@
           },
           "prompt": {
             "ru": "Идите прямо.",
-            "en": "Идите прямо."
+            "en": "Translate into English: “Идите прямо.”"
           },
           "public_data": {
             "tokens": [
@@ -3207,7 +3207,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Идите прямо.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Идите прямо.”, start with who/what acts, then put the verb."
+              "en": "Begin with “Go”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: Go первым; действие — до времени или места.",
@@ -3299,7 +3299,7 @@
           },
           "prompt": {
             "ru": "Выбери грамматически правильную фразу.",
-            "en": "Выбери грамматически правильную фразу."
+            "en": "Choose the grammatically correct sentence."
           },
           "public_data": {
             "choices": [
@@ -3354,7 +3354,7 @@
           },
           "prompt": {
             "ru": "Они любят рис.",
-            "en": "Они любят рис."
+            "en": "Translate into English: “Они любят рис.”"
           },
           "public_data": {
             "placeholder": {
@@ -3392,7 +3392,7 @@
           },
           "prompt": {
             "ru": "Где магазин?",
-            "en": "Где магазин?"
+            "en": "Translate into English: “Где магазин?”"
           },
           "public_data": {
             "tokens": [
@@ -3430,7 +3430,7 @@
           "hints": {
             "level_1": {
               "ru": "Вопрос «Где магазин?» начинается с вопросительного слова; после него be ставится перед подлежащим.",
-              "en": "The question “Где магазин?” starts with a question word; put “be” before the subject."
+              "en": "Start with “Where”, then use the correct question-word order for the verb and subject."
             },
             "level_2": {
               "ru": "Сначала Where, затем форма be для нужного подлежащего; слова о месте/возрасте идут после него.",
@@ -3674,7 +3674,7 @@
           "hints": {
             "level_1": {
               "ru": "В фразе «В кухне есть стол.» используй порядок: подлежащее, be, затем профессия/предмет/признак.",
-              "en": "For “В кухне есть стол.”, use this order: subject, “be”, then the job/object/description."
+              "en": "Use the existential structure “There is” before a singular object; put the location phrase after the object."
             },
             "level_2": {
               "ru": "Поставь There перед формой be; после неё проверь, нужен ли артикль или признак.",
@@ -3919,7 +3919,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Поезд отправляется в девять.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Поезд отправляется в девять.”, start with who/what acts, then put the verb."
+              "en": "Begin with “The”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: The первым; действие — до времени или места.",
@@ -4159,7 +4159,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Мне нужны два яблока.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Мне нужны два яблока.”, start with who/what acts, then put the verb."
+              "en": "Begin with “I”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: I первым; действие — до времени или места.",
@@ -4404,7 +4404,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Эта рубашка синяя.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Эта рубашка синяя.”, start with who/what acts, then put the verb."
+              "en": "Begin with “This”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: This первым; действие — до времени или места.",
@@ -4675,7 +4675,7 @@
           "hints": {
             "level_1": {
               "ru": "В фразе «Сегодня солнечно и тепло.» используй порядок: подлежащее, be, затем профессия/предмет/признак.",
-              "en": "For “Сегодня солнечно и тепло.”, use this order: subject, “be”, then the job/object/description."
+              "en": "Use the impersonal subject “It”, followed by “is” and two weather adjectives joined with “and”."
             },
             "level_2": {
               "ru": "Поставь It перед формой be; после неё проверь, нужен ли артикль или признак.",
@@ -4921,7 +4921,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Моя сестра — медсестра.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Моя сестра — медсестра.”, start with who/what acts, then put the verb."
+              "en": "Begin with “My”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: My первым; действие — до времени или места.",
@@ -5156,7 +5156,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «Она любит танцевать.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “Она любит танцевать.”, start with who/what acts, then put the verb."
+              "en": "Begin with “She”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: She первым; действие — до времени или места.",
@@ -5397,7 +5397,7 @@
           "hints": {
             "level_1": {
               "ru": "Это вопрос/просьба «Ты умеешь говорить по-английски?»: вспомогательный или модальный глагол ставится перед подлежащим.",
-              "en": "This is a question/request (“Ты умеешь говорить по-английски?”): put the auxiliary or modal before the subject."
+              "en": "Begin with “Can”; place the subject and main verb in the order required by this question or request."
             },
             "level_2": {
               "ru": "Начало — Can + подлежащее; после can используй глагол без to и окончания -s.",
@@ -5643,7 +5643,7 @@
           "hints": {
             "level_1": {
               "ru": "«Они сейчас смотрят телевизор.» описывает действие сейчас: после подлежащего нужна be-форма, затем глагол с -ing.",
-              "en": "“Они сейчас смотрят телевизор.” describes an action in progress: use a form of “be” after the subject, then a verb ending in -ing."
+              "en": "This describes an action happening now: use the subject, the matching form of “be”, and a verb ending in “-ing”."
             },
             "level_2": {
               "ru": "Сначала They, потом подходящая форма be; место/время добавь после действия.",
@@ -5888,7 +5888,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «У нас обед в час.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “У нас обед в час.”, start with who/what acts, then put the verb."
+              "en": "Begin with “We”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: We первым; действие — до времени или места.",
@@ -6148,7 +6148,7 @@
           "hints": {
             "level_1": {
               "ru": "Это вопрос/просьба «Можно мне стакан воды, пожалуйста?»: вспомогательный или модальный глагол ставится перед подлежащим.",
-              "en": "This is a question/request (“Можно мне стакан воды, пожалуйста?”): put the auxiliary or modal before the subject."
+              "en": "Begin with “Can”; place the subject and main verb in the order required by this question or request."
             },
             "level_2": {
               "ru": "Начало — Can + подлежащее; после can используй глагол без to и окончания -s.",
@@ -6404,7 +6404,7 @@
           "hints": {
             "level_1": {
               "ru": "В утвердительном предложении «У меня бронирование на две ночи.» начни с того, кто/что действует, затем поставь глагол.",
-              "en": "In the affirmative sentence “У меня бронирование на две ночи.”, start with who/what acts, then put the verb."
+              "en": "Begin with “I”, then place the main verb before the remaining details."
             },
             "level_2": {
               "ru": "Используй английский порядок: I первым; действие — до времени или места.",
@@ -6655,7 +6655,7 @@
           "hints": {
             "level_1": {
               "ru": "Это вопрос/просьба «Можно поговорить с Анной?»: вспомогательный или модальный глагол ставится перед подлежащим.",
-              "en": "This is a question/request (“Можно поговорить с Анной?”): put the auxiliary or modal before the subject."
+              "en": "Begin with “Can”; place the subject and main verb in the order required by this question or request."
             },
             "level_2": {
               "ru": "Начало — Can + подлежащее; после can используй глагол без to и окончания -s.",
@@ -6911,7 +6911,7 @@
           "hints": {
             "level_1": {
               "ru": "«Мы встречаемся с друзьями в шесть.» описывает действие сейчас: после подлежащего нужна be-форма, затем глагол с -ing.",
-              "en": "“Мы встречаемся с друзьями в шесть.” describes an action in progress: use a form of “be” after the subject, then a verb ending in -ing."
+              "en": "This describes an action happening now: use the subject, the matching form of “be”, and a verb ending in “-ing”."
             },
             "level_2": {
               "ru": "Сначала We, потом подходящая форма be; место/время добавь после действия.",
@@ -7157,7 +7157,7 @@
           "hints": {
             "level_1": {
               "ru": "Вопрос «Где автобусная остановка?» начинается с вопросительного слова; после него be ставится перед подлежащим.",
-              "en": "The question “Где автобусная остановка?” starts with a question word; put “be” before the subject."
+              "en": "Start with “Where”, then use the correct question-word order for the verb and subject."
             },
             "level_2": {
               "ru": "Сначала Where, затем форма be для нужного подлежащего; слова о месте/возрасте идут после него.",
