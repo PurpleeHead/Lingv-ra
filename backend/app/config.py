@@ -12,6 +12,14 @@ class Settings(BaseSettings):
     telegram_initdata_max_age_seconds: int = Field(default=3600, ge=30, le=3600)
     model_config = SettingsConfigDict(env_file=(".env", "../.env"), extra="ignore")
 
+    @field_validator("cors_allowed_origins")
+    @classmethod
+    def normalize_cors_allowed_origins(cls, value: str) -> str:
+        origins = [origin.strip().rstrip("/") for origin in value.split(",") if origin.strip()]
+        if "*" in origins:
+            raise ValueError("CORS_ALLOWED_ORIGINS must not contain a wildcard")
+        return ",".join(origins)
+
     @field_validator("telegram_bot_token", mode="before")
     @classmethod
     def empty_token_is_missing(cls, value):
@@ -33,6 +41,11 @@ class Settings(BaseSettings):
         ):
             raise ValueError("TELEGRAM_BOT_TOKEN cannot be empty")
         if self.app_env == "production":
+            if any(
+                origin and not origin.startswith("https://")
+                for origin in self.cors_allowed_origins.split(",")
+            ):
+                raise ValueError("Production CORS_ALLOWED_ORIGINS must use HTTPS")
             if self.auth_mode != "telegram" or self.telegram_bot_token is None:
                 raise ValueError(
                     "Production requires AUTH_MODE=telegram and TELEGRAM_BOT_TOKEN"
