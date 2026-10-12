@@ -16,7 +16,8 @@ from app.db import Base, create_database_engine, get_db
 from app.main import app
 from app.models import LearningActivity, LearningEvent, User, VocabularyItem
 from app.models import Course, Exercise, LessonProgress
-from app.seed_content import seed_content
+from app.content_quality import validate_content_quality
+from app.seed_content import load_content, seed_content
 
 
 def signed_data(token: str, user_id: int, auth_date: int | None = None) -> str:
@@ -60,6 +61,28 @@ class ApiTests(unittest.TestCase):
         app.dependency_overrides.clear()
         Base.metadata.drop_all(self.engine)
         self.engine.dispose()
+
+    def test_bundled_content_passes_content_quality_checks(self):
+        content = load_content()
+        validate_content_quality(content)
+
+        exercises = {
+            exercise.slug: exercise
+            for lesson in content.lessons
+            for exercise in lesson.exercises
+        }
+        self.assertEqual(
+            exercises["numbers-1"].prompt.en,
+            "How do you say “five” in English?",
+        )
+        self.assertEqual(
+            exercises["family-1"].prompt.en,
+            "What does “brother” mean?",
+        )
+        self.assertEqual(
+            exercises["review-1"].prompt.en,
+            "Choose the grammatically correct sentence.",
+        )
 
     def test_private_route_requires_verified_initdata(self):
         with patch("app.dependencies.settings", self.telegram_settings):
