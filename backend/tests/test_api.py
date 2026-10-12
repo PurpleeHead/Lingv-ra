@@ -16,7 +16,8 @@ from app.db import Base, create_database_engine, get_db
 from app.main import app
 from app.models import LearningActivity, LearningEvent, User, VocabularyItem
 from app.models import Course, Exercise, LessonProgress
-from app.seed_content import seed_content
+from app.content_quality import validate_content_quality
+from app.seed_content import load_content, seed_content
 
 
 def signed_data(token: str, user_id: int, auth_date: int | None = None) -> str:
@@ -61,6 +62,28 @@ class ApiTests(unittest.TestCase):
         Base.metadata.drop_all(self.engine)
         self.engine.dispose()
 
+    def test_bundled_content_passes_content_quality_checks(self):
+        content = load_content()
+        validate_content_quality(content)
+
+        exercises = {
+            exercise.slug: exercise
+            for lesson in content.lessons
+            for exercise in lesson.exercises
+        }
+        self.assertEqual(
+            exercises["numbers-1"].prompt.en,
+            "How do you say “five” in English?",
+        )
+        self.assertEqual(
+            exercises["family-1"].prompt.en,
+            "What does “brother” mean?",
+        )
+        self.assertEqual(
+            exercises["review-1"].prompt.en,
+            "Choose the grammatically correct sentence.",
+        )
+
     def test_cors_allows_configured_frontend_origin(self):
         origin = settings.mini_app_url.rstrip("/")
         response = self.client.options(
@@ -74,9 +97,7 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("access-control-allow-origin"), origin)
 
-        denied = self.client.get(
-            "/health", headers={"Origin": "http://untrusted.invalid"}
-        )
+        denied = self.client.get("/health", headers={"Origin": "http://untrusted.invalid"})
         self.assertNotEqual(
             denied.headers.get("access-control-allow-origin"),
             "http://untrusted.invalid",
