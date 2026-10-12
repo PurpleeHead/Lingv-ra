@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     auth_mode: str = "dev"
     telegram_bot_token: SecretStr | None = None
     mini_app_url: str = "http://localhost:5173"
+    cors_allowed_origins: str = ""
     telegram_initdata_max_age_seconds: int = Field(default=3600, ge=30, le=3600)
     model_config = SettingsConfigDict(env_file=(".env", "../.env"), extra="ignore")
 
