@@ -74,7 +74,9 @@ class ApiTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers.get("access-control-allow-origin"), origin)
 
-        denied = self.client.get("/health", headers={"Origin": "http://untrusted.invalid"})
+        denied = self.client.get(
+            "/health", headers={"Origin": "http://untrusted.invalid"}
+        )
         self.assertNotEqual(
             denied.headers.get("access-control-allow-origin"),
             "http://untrusted.invalid",
