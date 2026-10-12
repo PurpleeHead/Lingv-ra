@@ -11,7 +11,7 @@ from sqlalchemy import Column, MetaData, String, Table, func, select
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
-from app.config import Settings
+from app.config import Settings, settings
 from app.db import Base, create_database_engine, get_db
 from app.main import app
 from app.models import LearningActivity, LearningEvent, User, VocabularyItem
@@ -60,6 +60,25 @@ class ApiTests(unittest.TestCase):
         app.dependency_overrides.clear()
         Base.metadata.drop_all(self.engine)
         self.engine.dispose()
+
+    def test_cors_allows_configured_frontend_origin(self):
+        origin = settings.mini_app_url.rstrip("/")
+        response = self.client.options(
+            "/api/v1/me",
+            headers={
+                "Origin": origin,
+                "Access-Control-Request-Method": "GET",
+                "Access-Control-Request-Headers": "content-type",
+            },
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers.get("access-control-allow-origin"), origin)
+
+        denied = self.client.get("/health", headers={"Origin": "http://untrusted.invalid"})
+        self.assertNotEqual(
+            denied.headers.get("access-control-allow-origin"),
+            "http://untrusted.invalid",
+        )
 
     def test_private_route_requires_verified_initdata(self):
         with patch("app.dependencies.settings", self.telegram_settings):
