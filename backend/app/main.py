@@ -37,7 +37,16 @@ from datetime import datetime, timezone
 app = FastAPI(title="Lingvéra API", version="0.2.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.mini_app_url],
+    allow_origins=list(
+        dict.fromkeys(
+            origin.strip().rstrip("/")
+            for origin in [
+                settings.mini_app_url,
+                *settings.cors_allowed_origins.split(","),
+            ]
+            if origin.strip()
+        )
+    ),
     allow_credentials=False,
     allow_methods=["GET", "POST", "PATCH", "OPTIONS"],
     allow_headers=["Content-Type", "X-Telegram-Init-Data"],
