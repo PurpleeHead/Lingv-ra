@@ -41,6 +41,15 @@ def validate_content_quality(content: ContentSeed) -> None:
                 raise ValueError(
                     f"exercise {exercise.slug} has Russian text in its English instruction"
                 )
+            for field_name, english_text in (
+                ("level 1 hint", exercise.hints.level_1.en),
+                ("level 2 hint", exercise.hints.level_2.en),
+                ("explanation", exercise.explanation.en),
+            ):
+                if re.search(r"[А-Яа-яЁё]", english_text):
+                    raise ValueError(
+                        f"exercise {exercise.slug} has Russian text in its English {field_name}"
+                    )
             fingerprints.append(
                 (
                     exercise.type,
