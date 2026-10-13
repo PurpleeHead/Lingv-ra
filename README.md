@@ -95,7 +95,7 @@ SQLite включён для локальной разработки и тест
 
 ## Production deployment
 
-- **Telegram bot:** https://t.me/LingveraLearnBot
+- **Telegram bot:** https://t.me/LingveraLearnBot (the `/start` message includes a feedback button; `/feedback` links to the maintainer)
 - **Mini App:** https://lingv-ra.pages.dev/
 - **API health:** https://lingv-ra.onrender.com/health
 - **API readiness:** https://lingv-ra.onrender.com/ready
