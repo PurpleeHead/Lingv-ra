@@ -2,7 +2,7 @@
 
 Lingvéra — Telegram-first приложение для коротких уроков английского с русским интерфейсом. В репозитории есть FastAPI backend, SQLAlchemy/PostgreSQL, миграции Alembic, React + TypeScript Mini App и необязательный aiogram бот.
 
-Это проверяемый MVP, не production-релиз. В локальном курсе A1 30 уроков и 120 упражнений трёх типов; backend хранит курсы, уроки и упражнения в PostgreSQL/SQLite, проверяет ответы и сохраняет попытки и прогресс. Для слов есть backend-планировщик с Again/Hard/Good/Easy; это прозрачная MVP-эвристика, не полный SM-2. Напоминания, платежи, AI и админка пока отсутствуют.
+Lingvéra развёрнута и доступна через Telegram: бот [@LingveraLearnBot](https://t.me/LingveraLearnBot), Mini App [lingv-ra.pages.dev](https://lingv-ra.pages.dev/), API [lingv-ra.onrender.com](https://lingv-ra.onrender.com). Текущий релиз — ранний MVP: базовый сценарий запуска бота и открытия Mini App проверен вручную; полный тест восстановления после перезапуска, межпользовательской изоляции, резервного копирования и восстановления ещё предстоит выполнить. В курсе A1 — 30 уроков и 120 упражнений трёх типов. Backend хранит курсы, уроки, попытки и прогресс в PostgreSQL/SQLite, проверяет ответы и планирует повторение слов по оценкам Again/Hard/Good/Easy; это прозрачная MVP-эвристика, не полный SM-2. Напоминания, платежи, AI и админка пока отсутствуют.
 
 ## Требования
 
@@ -93,6 +93,17 @@ SQLite включён для локальной разработки и тест
 
 Дневная цель — число проверенных учебных действий, не минуты. Она учитывает уникальное верно решённое упражнение и принятую backend оценку повтора; неправильно отвеченные попытки не считаются. В настройках Mini App доступны цели 5/10/15 действий. Streak и неделя считаются по UTC; локальная timezone пользователя пока не хранится. Ежедневная история начинает накапливаться после применения миграции `0005_learning_activity`, без выдуманного backfill.
 
+## Production deployment
+
+- **Telegram bot:** https://t.me/LingveraLearnBot
+- **Mini App:** https://lingv-ra.pages.dev/
+- **API health:** https://lingv-ra.onrender.com/health
+- **API readiness:** https://lingv-ra.onrender.com/ready
+- **Frontend hosting:** Cloudflare Pages
+- **API + polling bot:** Render Docker Web Service; startup runs Alembic migrations, idempotent content seeding, the Telegram polling process, and Uvicorn.
+
+The current Render startup log confirmed the migration, seeding, bot polling command, and API startup. The bot `/start` response and Mini App opening were manually confirmed by the project owner. These checks do not by themselves prove persistence across sessions, multi-user isolation, bot recovery after a process crash, or a successful database restore.
+
 ## Telegram Mini App и production-настройки
 
 1. Создайте бота через BotFather и задайте публичный HTTPS URL Mini App.
@@ -102,6 +113,10 @@ SQLite включён для локальной разработки и тест
 5. Production-конфигурация отклоняет dev-личность, пустой token и URL без HTTPS.
 
 Обычный `docker-compose.yml` предназначен только для локальной разработки: он явно задаёт dev-авторизацию и не является production deployment-конфигурацией. Нужны внешний HTTPS reverse proxy, secret store, firewall, резервное копирование, мониторинг и проверенная инфраструктура.
+
+## First-user readiness: operational checklist
+
+Перед приглашением первых внешних пользователей пройдите чек-лист из [`docs/production-operations.md`](docs/production-operations.md). Он включает проверку сохранения прогресса, тест второго Telegram-пользователя, восстановление после перезапуска, диагностику ошибок, privacy-friendly аналитику и проверку резервной копии.
 
 ## Тесты и проверки
 
@@ -137,6 +152,6 @@ Migration проверяйте на целевой тестовой БД. Не �
 
 Приложение сохраняет пользователей, настройки, курс, уроки, попытки и завершения уроков в БД. Пользователь при `AUTH_MODE=dev` — одна локальная тестовая личность, доступная только в `APP_ENV=development`. В Telegram-режиме доверие основано только на валидном Telegram initData.
 
-Не проверены production-развёртывание, реальный Telegram bot, PostgreSQL-соединение в этой среде, webhook и резервное восстановление. Compose конфигурация подготовлена, но Docker должен быть установлен и запущен на машине владельца.
+Остаются отдельные production-проверки: сохранение прогресса после закрытия и повторного открытия Mini App, вход с другого Telegram-аккаунта, поведение после ручного перезапуска Render, получение уведомления при сбое фонового polling-процесса и тестовое восстановление базы из резервной копии. Эти операции требуют действий владельца в Telegram и Render; их нельзя считать выполненными только по статусу Live.
 
 В среде проверки Docker CLI отсутствует, поэтому PostgreSQL Compose не запускался. Обычная Vite production-сборка из каталога с кириллическим путём завершается на Windows sandbox с `EPERM: operation not permitted, realpath .../frontend/src/main.tsx`; typecheck проходит, а собранный bundle проверен только с временной runtime-обёрткой Node, без изменений исходников для обхода ограничения. Проверка dev-сервера в этой sandbox также ограничена ошибкой realpath/dep-scan. На обычной Windows-среде без sandbox команды `npm run build` и `npm run dev` следует повторить.
