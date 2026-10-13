@@ -53,6 +53,8 @@ This runbook distinguishes checks confirmed so far from checks that still requir
 
 ## Feedback, analytics, and privacy
 
+The bot's `/start` response now includes an **Оставить отзыв** button, and the `/feedback` command links users to the maintainer at https://t.me/art_alberto. This is a direct contact path, not an in-app ticketing system; do not send sensitive information.
+
 No third-party analytics provider is assumed to be configured. Before adding one, choose the minimum events needed and document what is collected. Recommended initial events are aggregate counts for app open, lesson opened, exercise answered, lesson completed, and vocabulary review submitted. Avoid collecting raw Telegram initData, bot tokens, names, message contents, or answer text in analytics. Prefer aggregate counters or pseudonymous internal user IDs, restrict log access, and add a clear privacy notice before inviting external users.
 
 For feedback, start with a visible contact/feedback link to the project owner or a dedicated GitHub issue template. Do not collect private user data in public GitHub issues. A future in-app feedback endpoint should validate input, rate-limit submissions, avoid logging sensitive payloads, and have an explicit retention policy.
